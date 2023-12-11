@@ -1,0 +1,34 @@
+javascript
+Copy code
+scrollToEnd() {
+  var container = document.querySelector(".hello");
+  var scrollHeight = container.scrollHeight;
+  container.scrollTop = scrollHeight;
+}
+
+start() {
+  var intervalId = null; // Variable to store the interval ID
+
+  // Function to show the message
+  const showMessage = () => {
+    this.showMessage(this.selectedUserId);
+
+    // Stop the interval after showing the message
+    clearInterval(intervalId);
+  };
+
+  // Attach the click event listener to trigger the message showing
+  document.addEventListener("click", () => {
+    if (!intervalId) {
+      // Start the interval only if it hasn't been started yet
+      intervalId = setInterval(showMessage, 4000);
+    }
+  });
+}
+In this updated code, the start function is modified to add a click event listener to the document object. When a click event occurs, it checks if the interval has already been started. If not, it starts the interval, which repeatedly calls the showMessage function every 4000 milliseconds (4 seconds).
+
+The showMessage function is also updated to call clearInterval(intervalId) after showing the message. This stops the interval from executing further, ensuring that the code inside showMessage is only executed once.
+
+With these changes, the scrollToEnd function remains unchanged. It can be called from within the showMessage function or any other relevant event handler to scroll to the end of the container as desired.
+
+Note: Make sure to replace this.showMessage(this.selectedUserId) with the appropriate code relevant to your application.

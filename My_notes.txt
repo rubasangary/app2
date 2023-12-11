@@ -1,0 +1,4 @@
+'strict' => false,
+this has been changed
+from true to false config/database.php
+Introducing "x-default hreflang" for international landing pages
